@@ -3,7 +3,6 @@ syntax = "proto3";
 package greeter;
 
 // Option specifying the Go package path where the generated files will reside.
-option go_package = "../greeter;greeter";
 
 // The greeting service definition.
 service Greeter {

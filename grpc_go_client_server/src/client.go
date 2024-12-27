@@ -6,6 +6,8 @@ import (
 	"log"
 	"time"
 
+	// greeter "my-grpc-project/greeter"
+
 	greeter "my-grpc-project/greeter"
 
 	"google.golang.org/grpc"
@@ -35,6 +37,7 @@ import (
 
 func main() {
 
+	fmt.Println("Will try to greet the world")
 	// Set up a connection to the server.
 
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
