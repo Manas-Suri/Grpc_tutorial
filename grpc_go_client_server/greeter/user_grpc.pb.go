@@ -4,7 +4,7 @@
 // - protoc             v5.26.1
 // source: proto/user.proto
 
-package greeter
+package user
 
 import (
 	context "context"

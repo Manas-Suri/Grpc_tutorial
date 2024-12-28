@@ -6,34 +6,11 @@ import (
 	"log"
 	"time"
 
-	// greeter "my-grpc-project/greeter"
-
-	greeter "my-grpc-project/greeter"
+	greeter "grpc_go_client_server/greeter"
 
 	"google.golang.org/grpc"
 )
 
-// func main() {
-// 	// Establish a connection to the server
-// 	conn, err := grpc.Dial(":50051", grpc.WithInsecure(), grpc.WithBlock())
-// 	if err != nil {
-// 		log.Fatalf("did not connect: %v", err)
-// 	}
-// 	defer conn.Close()
-
-// 	// Create a Greeter client
-// 	c := greeter.NewGreeterClient(conn)
-
-// 	// Call the SayHello method
-// 	name := "World"
-// 	resp, err := c.SayHello(context.Background(), &greeter.HelloRequest{Name: name})
-// 	if err != nil {
-// 		log.Fatalf("could not greet: %v", err)
-// 	}
-
-// 	// Print the server response
-// 	fmt.Printf("Greeting: %s\n", resp.GetMessage())
-// }
 
 func main() {
 

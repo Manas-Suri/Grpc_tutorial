@@ -1,4 +1,4 @@
-module my-grpc-project
+module grpc_go_client_server
 
 go 1.23.4
 
