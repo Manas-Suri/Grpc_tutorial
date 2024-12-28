@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class User1Stub(object):
+class GreeterStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -35,38 +35,38 @@ class User1Stub(object):
             channel: A grpc.Channel.
         """
         self.SayHello = channel.unary_unary(
-                '/user1.User1/SayHello',
+                '/greeter.Greeter/SayHello',
                 request_serializer=user__pb2.HelloRequest.SerializeToString,
                 response_deserializer=user__pb2.HelloReply.FromString,
                 _registered_method=True)
         self.GetUsers = channel.unary_unary(
-                '/user1.User1/GetUsers',
+                '/greeter.Greeter/GetUsers',
                 request_serializer=user__pb2.GetUsersRequest.SerializeToString,
                 response_deserializer=user__pb2.GetUsersResponse.FromString,
                 _registered_method=True)
         self.GetUserById = channel.unary_unary(
-                '/user1.User1/GetUserById',
+                '/greeter.Greeter/GetUserById',
                 request_serializer=user__pb2.GetUserByIdRequest.SerializeToString,
                 response_deserializer=user__pb2.GetUserByIdResponse.FromString,
                 _registered_method=True)
         self.CreateUser = channel.unary_unary(
-                '/user1.User1/CreateUser',
+                '/greeter.Greeter/CreateUser',
                 request_serializer=user__pb2.CreateUserRequest.SerializeToString,
                 response_deserializer=user__pb2.CreateUserResponse.FromString,
                 _registered_method=True)
         self.UpdateUser = channel.unary_unary(
-                '/user1.User1/UpdateUser',
+                '/greeter.Greeter/UpdateUser',
                 request_serializer=user__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=user__pb2.UpdateUserResponse.FromString,
                 _registered_method=True)
         self.DeleteUser = channel.unary_unary(
-                '/user1.User1/DeleteUser',
+                '/greeter.Greeter/DeleteUser',
                 request_serializer=user__pb2.DeleteUserRequest.SerializeToString,
                 response_deserializer=user__pb2.DeleteUserResponse.FromString,
                 _registered_method=True)
 
 
-class User1Servicer(object):
+class GreeterServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SayHello(self, request, context):
@@ -106,7 +106,7 @@ class User1Servicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_User1Servicer_to_server(servicer, server):
+def add_GreeterServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SayHello': grpc.unary_unary_rpc_method_handler(
                     servicer.SayHello,
@@ -140,13 +140,13 @@ def add_User1Servicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'user1.User1', rpc_method_handlers)
+            'greeter.Greeter', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('user1.User1', rpc_method_handlers)
+    server.add_registered_method_handlers('greeter.Greeter', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class User1(object):
+class Greeter(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -163,7 +163,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/SayHello',
+            '/greeter.Greeter/SayHello',
             user__pb2.HelloRequest.SerializeToString,
             user__pb2.HelloReply.FromString,
             options,
@@ -190,7 +190,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/GetUsers',
+            '/greeter.Greeter/GetUsers',
             user__pb2.GetUsersRequest.SerializeToString,
             user__pb2.GetUsersResponse.FromString,
             options,
@@ -217,7 +217,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/GetUserById',
+            '/greeter.Greeter/GetUserById',
             user__pb2.GetUserByIdRequest.SerializeToString,
             user__pb2.GetUserByIdResponse.FromString,
             options,
@@ -244,7 +244,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/CreateUser',
+            '/greeter.Greeter/CreateUser',
             user__pb2.CreateUserRequest.SerializeToString,
             user__pb2.CreateUserResponse.FromString,
             options,
@@ -271,7 +271,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/UpdateUser',
+            '/greeter.Greeter/UpdateUser',
             user__pb2.UpdateUserRequest.SerializeToString,
             user__pb2.UpdateUserResponse.FromString,
             options,
@@ -298,7 +298,7 @@ class User1(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/user1.User1/DeleteUser',
+            '/greeter.Greeter/DeleteUser',
             user__pb2.DeleteUserRequest.SerializeToString,
             user__pb2.DeleteUserResponse.FromString,
             options,
