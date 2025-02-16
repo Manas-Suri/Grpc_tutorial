@@ -25,6 +25,8 @@ Go grpc -
 ```bash
 protoc --plugin=/home/msuri/go/bin/protoc-gen-go --go_out=. --go-grpc_out=. proto/user.proto
 ```
+In this, add plugin as /home/msuri/go/bin/protoc-gen-go to get this location.
+
 2.  If this creates the problem, then first add the protoc-gen-go-grpc   plugin.
 To install and follow this plugin, follow these commands - 
  
@@ -55,24 +57,12 @@ grpc_go_client_server
 
 1. Make a virtual environment for both client and server folders
 
-```console
+```bash
 python3 -m venv server/venv
 source server/venv/bin/activate
 pip install -r requirements.txt
 python3 server/server.py
-
 ```
-Adding the bash script in another terminal
-
-```console
-python3 -m venv client/venv
-source client/venv/bin/activate
-pip install -r client/requirements.txt
-python3 client/client.py
-```
-
-
-
 
 Go grpc - 
 
